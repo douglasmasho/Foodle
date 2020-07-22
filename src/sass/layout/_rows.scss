@@ -1,0 +1,28 @@
+.row{
+    display: flex;
+    padding: 1rem;
+    @include respond(tab-port){  
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-2{
+        &--child{
+            width: 50%;
+            margin: 2rem;
+            @include respond(tab-port){  
+                width: 90%;
+            }
+        }       
+    }
+    &-3{
+        &--child{
+            width: 25%;
+            margin: 2rem;
+            @include respond(tab-port){  
+                width: 90%;
+            };
+        }
+    }
+}

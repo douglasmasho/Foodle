@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import RecipeContextProvider from './contexts/RecipeContext';
+import SearchBar from './components/SearchBar';
+import RecipeWall from "./components/RecipeWall";
+import { Route, Link } from "react-router-dom";
+import NutriInfo from './components/NutriInfo';
+import AnalysisContextProvider from './contexts/AnalysisContext';
+import Analyzer from './components/Analyzer';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecipeContextProvider>
+      <AnalysisContextProvider>
+      <div>
+        <Link to="/analyze">Analyze ingredient</Link>
+          <Route exact path="/" render={()=>{
+            return <div className="App">
+                        <h1>foodle-recipe search app</h1>
+                        <SearchBar/>
+                        <RecipeWall/>
+                    </div>
+          }}/>
+
+          <Route exact path={`/recipe/:index`} render={routeArgs=>{
+            return <NutriInfo routeArgs={routeArgs}/>
+          }}/>
+
+          <Route exact path="/analyze" render={()=>(
+            <Analyzer/>
+          )}/>
+      </div>
+      </AnalysisContextProvider>
+    </RecipeContextProvider>
   );
 }
 

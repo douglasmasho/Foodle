@@ -1,0 +1,69 @@
+body{
+    font-family: "Montserrat", sans-serif;
+}
+
+.normal-text{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    @include respond(tab-port){
+        font-size: 2rem;
+    }
+    @include respond(phone){
+        font-size: 3rem;
+    }
+}
+
+.medium-text{
+    font-size: 2rem;
+    @include respond(tab-port){
+        font-size: 5rem;
+    }
+}
+
+
+.white-text{
+    color: rgb(255, 255, 255);
+    margin: 0;
+}
+
+.red-text{
+    color: red;
+}
+
+.black-text{
+    color: black;
+}
+
+.header-text{
+    font-size: 4rem;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+}
+
+.header-text-big{
+    font-size: 10rem;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    font-weight: lighter;
+}
+.blue-text{
+    color: #0136B4;
+}
+
+
+.align-left{
+    text-align: left;
+}
+
+.align-right{
+    text-align: right;
+    @include respond(tab-port){
+        text-align: left;
+    }
+}
+
+.bold{
+    font-weight: bold;
+}

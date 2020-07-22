@@ -1,0 +1,26 @@
+.table{
+    &-indicator{
+        font-size: 2rem;
+        font-weight: lighter;
+        color: #2cff2c;
+        text-transform: uppercase;
+    }
+    width: 80%;
+    border: 1px white solid;
+
+    & thead{
+        font-size: 1.8rem;
+        color: #1e1e1e;
+    }
+
+    & td{
+        padding: 1rem;
+        background-color: white;
+        font-size: 1.6rem;
+        color: #1e1e1e;
+    }
+    &__header{
+        background-color: #2cff2c !important;
+        text-transform: uppercase;
+    }
+}

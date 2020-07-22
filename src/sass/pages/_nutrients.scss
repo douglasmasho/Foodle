@@ -1,0 +1,28 @@
+.nutrients{
+    color: white;
+    padding-top: 5rem;
+    & img{
+        width: 80%;
+        border-radius: 20px;
+    }
+
+    & h1{
+        font-size: 4rem;
+        font-weight: lighter;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    & h3{
+        font-size: 2rem;
+        font-weight: lighter;
+        color: #2cff2c;
+    }
+    & li{
+        font-size: 1.6rem;
+        list-style: none;
+    }
+    & ul{
+        margin-top: 0.5rem;
+    }
+
+}
