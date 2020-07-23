@@ -1,0 +1,22 @@
+.ingredient{
+    &__text{
+        transition: all .3s;
+        display: inline-block;
+    }
+    &__analyze{
+        opacity: 0;
+        transition: all .3s;
+    }
+    &:hover{
+        background-color: rgba(0,0,0,0.5);
+        cursor: pointer;
+        .ingredient__analyze{
+            opacity: 1 !important;
+            font-weight: bolder;
+            color: #2cff2c;
+        }
+        .ingredient__text{
+            opacity: 0;
+        }
+    }
+}

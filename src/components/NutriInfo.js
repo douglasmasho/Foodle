@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useContext} from 'react';
+import { AnalysisContext } from '../contexts/AnalysisContext';
 
 
 const NutriInfo = (props) => {
@@ -8,6 +8,15 @@ const NutriInfo = (props) => {
     const recipe = recipes[index].recipe;
     const nutrientArr = Object.values(recipe.totalDaily);
     const nutrientArrTot = Object.values(recipe.totalNutrients);
+    const {history} = props.routeArgs;
+
+    const {initFetch} = useContext(AnalysisContext);
+
+    const analyzeIngredient = (event)=>{
+        const string =event.currentTarget.children.item(0).textContent;
+        initFetch(string);
+        history.push("/analyze")
+    }
 
     return ( 
         <div className="nutrients">
@@ -65,7 +74,7 @@ const NutriInfo = (props) => {
 
             <div className="u-margin-top">  
                     <div className="center-hrz--col u-margin-bottom-big">
-                            <h3 className="table-indicator">Ingredient Data:</h3><br/>
+                            <h3 className="table-indicator">Ingredient Data (hover to analyze):</h3><br/>
                             <table className="table">
                                 <thead style={{backgroundColor: "#2cff2c"}}>
                                     <tr>
@@ -77,7 +86,9 @@ const NutriInfo = (props) => {
                                 <tbody>
                                     {recipe.ingredients.map((ingredient, index)=>(
                                         <tr key={index}>
-                                            <td>{ingredient.text}</td>
+                                            <td className="ingredient" onClick={analyzeIngredient}>
+                                                <p className="ingredient__text">{ingredient.text}</p><span className="ingredient__analyze"> Analyze ingredient</span>
+                                            </td>
                                             <td>{ingredient.weight}g</td>      
                                         </tr>
                                     ))}
