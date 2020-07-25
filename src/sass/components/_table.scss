@@ -2,25 +2,25 @@
     &-indicator{
         font-size: 2rem;
         font-weight: lighter;
-        color: #2cff2c;
+        color: $lime-green;
         text-transform: uppercase;
     }
     width: 80%;
-    border: 1px white solid;
+    border: 1px $white solid;
 
     & thead{
         font-size: 1.8rem;
-        color: #1e1e1e;
+        color: $gray;
     }
 
     & td{
         padding: 1rem;
         background-color: white;
         font-size: 1.6rem;
-        color: #1e1e1e;
+        color: $gray;
     }
     &__header{
-        background-color: #2cff2c !important;
+        background-color: $lime-green !important;
         text-transform: uppercase;
     }
 }

@@ -6,6 +6,7 @@ import { Route, Link } from "react-router-dom";
 import NutriInfo from './components/NutriInfo';
 import AnalysisContextProvider from './contexts/AnalysisContext';
 import Analyzer from './components/Analyzer';
+import Navigation from './components/Navigation';
 
 
 
@@ -14,22 +15,25 @@ function App() {
     <RecipeContextProvider>
       <AnalysisContextProvider>
       <div>
-        <Link to="/analyze">Analyze ingredient</Link>
-          <Route exact path="/" render={()=>{
-            return <div className="App">
-                        <h1>foodle-recipe search app</h1>
-                        <SearchBar/>
-                        <RecipeWall/>
-                    </div>
-          }}/>
+            <Navigation/>
+            <div style={{paddingTop: "8rem"}}>
+                <Route exact path="/" render={()=>{
+                      return <div className="App">
+                                   
+                                  <h1 className="header-text green-text u-margin-top">Find a recipe</h1>
+                                  <SearchBar/>
+                                  <RecipeWall/>
+                              </div>
+                    }}/>
 
-          <Route exact path={`/recipe/:index`} render={routeArgs=>{
-            return <NutriInfo routeArgs={routeArgs}/>
-          }}/>
+                    <Route exact path={`/recipe/:index`} render={routeArgs=>{
+                      return <NutriInfo routeArgs={routeArgs}/>
+                    }}/>
 
-          <Route exact path="/analyze" render={()=>(
-            <Analyzer/>
-          )}/>
+                    <Route exact path="/analyze" render={()=>(
+                      <Analyzer/>
+                    )}/>
+            </div>
       </div>
       </AnalysisContextProvider>
     </RecipeContextProvider>

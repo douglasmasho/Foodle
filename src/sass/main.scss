@@ -1,4 +1,6 @@
 @import "abstracts/mixins";
+@import "abstracts/variables";
+
 
 @import "base/base";
 @import "base/typography";
@@ -7,6 +9,9 @@
 @import "components/recipe-card";
 @import "components/table";
 @import "components/ingredient";
+@import "components/navigation";
+@import "components/button";
+@import "components/search-box";
 
 @import "layout/center-horizontally";
 @import "layout/center-vertically";

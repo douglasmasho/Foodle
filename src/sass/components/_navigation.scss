@@ -1,0 +1,23 @@
+.navigation{
+    background-color: rgba(0, 0, 0, 0.644);
+    position: fixed;
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    z-index: 100;
+    justify-content: space-between;
+
+    &__logo{
+        width: 15rem;
+    }
+    &__link{
+        text-decoration: none;
+        font-size: 2rem;
+        margin-right: 2rem;
+        color: $lime-green;
+        transition: all .3s;
+        &:hover{
+            color: $white;
+        }
+    }
+}
