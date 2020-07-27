@@ -2,7 +2,7 @@ import React from 'react';
 import RecipeContextProvider from './contexts/RecipeContext';
 import SearchBar from './components/SearchBar';
 import RecipeWall from "./components/RecipeWall";
-import { Route, Link } from "react-router-dom";
+import { Route} from "react-router-dom";
 import NutriInfo from './components/NutriInfo';
 import AnalysisContextProvider from './contexts/AnalysisContext';
 import Analyzer from './components/Analyzer';
@@ -16,10 +16,10 @@ function App() {
       <AnalysisContextProvider>
       <div>
             <Navigation/>
-            <div style={{paddingTop: "8rem"}}>
+            <div style={{paddingTop: "5rem"}}>
                 <Route exact path="/" render={()=>{
                       return <div className="App">
-                                   
+                               
                                   <h1 className="header-text green-text u-margin-top">Find a recipe</h1>
                                   <SearchBar/>
                                   <RecipeWall/>

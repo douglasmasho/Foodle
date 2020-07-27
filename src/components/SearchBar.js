@@ -1,9 +1,13 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import { RecipeContext } from '../contexts/RecipeContext';
+require("dotenv").config();
+
 
 const SearchBar = () => {
-    const APP_ID = "c0a1d977";
-    const APP_KEY = "0fdae905754ba278e4ce933a690f2a8d";
+    //we can access environmental variables using process.env 
+    const APP_ID = process.env.REACT_APP_SEARCH_ID;
+    const APP_KEY = process.env.REACT_APP_SEARCH_KEY;
+
 
     const {dispatch} = useContext(RecipeContext);
 
@@ -19,7 +23,7 @@ const SearchBar = () => {
         const data = await dataJson.json();
         console.log(data);
         let dataString = JSON.stringify(data);
-        localStorage.setItem("recipes", dataString)
+        localStorage.setItem("recipes", dataString);
         dispatch({
           type: "SET_LIST",
           recipes: data.hits
@@ -29,14 +33,14 @@ const SearchBar = () => {
         document.getElementById("error-text").style.display = "block";
       }
       //scroll to bottom
-      // document.querySelector("#dashboard").scrollTo(?,?);
     }
+    // console.log(process.env.REACT_APP_SEARCH_KEY)
 
 
     return ( 
         <div>
             <form onSubmit={handleSubmit}>
-              <div className="center-hrz--col u-margin-top-big">
+              <div className="center-hrz--col u-margin-top">
                 <input type="text" className="search-box" placeholder="search a recipe" required/>
                 <input type="submit" value="search" className="button"/>
                 <p style={{color: "red", display: "none"}} id="error-text" className="normal-text">There is no such food!</p>

@@ -5,7 +5,13 @@ export const RecipeContext = createContext();
 
 const RecipeContextProvider = (props) => {
     
-    const [recipes, dispatch] = useReducer(recipesReducer, []);
+    let recipeArr
+    if(localStorage.getItem("recipes")){
+         recipeArr = JSON.parse(localStorage.getItem("recipes")).hits
+    }else{
+        recipeArr = []
+    }
+    const [recipes, dispatch] = useReducer(recipesReducer, recipeArr);
 
     return ( 
         <RecipeContext.Provider value={{recipes, dispatch}}>

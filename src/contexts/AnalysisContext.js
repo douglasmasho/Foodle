@@ -1,6 +1,7 @@
 import React, {useReducer, createContext} from 'react';
 import { analysisReducer } from '../reducers/Reducer';
 import axios from "axios";
+require("dotenv").config();
 
 export const AnalysisContext = createContext();
 
@@ -14,8 +15,9 @@ const AnalysisContextProvider = (props) => {
         analysisObj = {}
     }
     const [analysis, dispatch] = useReducer(analysisReducer, analysisObj);
-    const APP_ID = "710d740d";
-    const APP_KEY = "11523d351441342fcbe929bb215c690b";
+    //we can access environmental variables using process.env 
+    const APP_ID = process.env.REACT_APP_ANALYZE_ID;
+    const APP_KEY = process.env.REACT_APP_ANALYZE_KEY;
 
 
     const initFetch = string =>{
@@ -32,8 +34,11 @@ const AnalysisContextProvider = (props) => {
                     analysis: resp.data
                 })
                 localStorage.setItem("analysis", JSON.stringify(resp.data));
-                console.log(analysis)
-                console.log("roses")
+                console.log(analysis);                
+        })
+        .catch((error)=>{
+            console.log(error);
+            
         })
     }
 

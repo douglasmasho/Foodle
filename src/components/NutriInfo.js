@@ -3,6 +3,7 @@ import { AnalysisContext } from '../contexts/AnalysisContext';
 
 
 const NutriInfo = (props) => {
+    window.scrollTo(0,0);
     const index = props.routeArgs.match.params.index;
     const recipes = JSON.parse(localStorage.getItem("recipes")).hits;
     const recipe = recipes[index].recipe;
@@ -15,7 +16,7 @@ const NutriInfo = (props) => {
     const analyzeIngredient = (event)=>{
         const string =event.currentTarget.children.item(0).textContent;
         initFetch(string);
-        history.push("/analyze")
+        history.push("/analyze");
     }
 
     return ( 

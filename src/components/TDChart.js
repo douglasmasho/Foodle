@@ -4,6 +4,7 @@ import Chart from "chart.js";
 
 const TDChart = () => {
     const {analysis} = useContext(AnalysisContext);
+    window.scrollTo(0,document.body.scrollHeight);
     console.log(analysis);
     useEffect(()=>{
         if(Object.entries(analysis.totalDaily).length !== 0){
@@ -19,7 +20,7 @@ const TDChart = () => {
             });
     
             
-            if(window.bar != undefined){
+            if(window.bar !== undefined){
                 window.bar.destroy();
             }
             console.log(Object.entries(analysis.totalDaily).length);
@@ -40,6 +41,7 @@ const TDChart = () => {
                         }], //array of objects
                 },
                 options: {
+                    
                     legend: {
                         labels: {
                           fontColor: '#ffffff'
@@ -68,12 +70,12 @@ const TDChart = () => {
     
     if(Object.entries(analysis.totalDaily).length !== 0){
         return ( 
-            <div>
+            <div className="u-margin-bottom">
                 <canvas className="myChart"></canvas>
             </div>
          );
     }else{
-        return <div>
+        return <div className="u-margin-bottom">
                  <h1>No data</h1>
              </div>
     }

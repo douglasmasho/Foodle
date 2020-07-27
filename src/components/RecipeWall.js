@@ -8,6 +8,7 @@ const RecipeWall = () => {
     console.log(recipes);
 
     if(recipes.length !== 0){
+        window.scrollTo(0,document.body.scrollHeight);
         return ( 
             <div className="row center-hrz" style={{justifyContent: "space-around"}}>
                 {
