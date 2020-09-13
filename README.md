@@ -1,3 +1,30 @@
+# Foodle
+![Banner](./foodle.png)
+
+## Description
+Foodle is a recipe searching app that generates recipes, ingredients and nutritional information for any recipe search query. Thhis app includes an ingedient analyzer that shows nutritional composition of any ingredient in the form of a bar graph
+
+## Technologies used
+React, Chart.js, Edamam API, axios.
+
+## Notable:
+Make sure to quantify any ingredient search query when using the ingredient analyzer.
+
+## [Live Demo](https://tuterolive.herokuapp.com/)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

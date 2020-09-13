@@ -5,7 +5,7 @@ export const RecipeContext = createContext();
 
 const RecipeContextProvider = (props) => {
     
-    let recipeArr
+    let recipeArr;
     if(localStorage.getItem("recipes")){
          recipeArr = JSON.parse(localStorage.getItem("recipes")).hits
     }else{

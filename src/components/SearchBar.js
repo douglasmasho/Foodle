@@ -18,8 +18,9 @@ const SearchBar = () => {
     }
 
     async function fetchData(string){
+      // https://cors-anywhere.herokuapp.com/
       try{
-        const dataJson = await fetch(`https://api.edamam.com/search?q=${string}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free`);
+        const dataJson = await fetch(`https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=${string}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free`);
         const data = await dataJson.json();
         console.log(data);
         let dataString = JSON.stringify(data);

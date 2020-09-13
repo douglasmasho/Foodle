@@ -31,17 +31,14 @@ const RecipeWall = () => {
                     })
                 }
  
-               </div>
-
-
-        
+               </div>   
          );
     }else if(recipes.length === 0){
-        return null
+        return (<div>
+            <h2>No data</h2>
+        </div>)
 
     }
-    // return null
-
 }
  
 export default RecipeWall;

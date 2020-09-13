@@ -34,11 +34,10 @@ const AnalysisContextProvider = (props) => {
                     analysis: resp.data
                 })
                 localStorage.setItem("analysis", JSON.stringify(resp.data));
-                console.log(analysis);                
+                console.log(analysis);
         })
         .catch((error)=>{
-            console.log(error);
-            
+            console.log(error);     
         })
     }
 
