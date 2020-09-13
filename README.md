@@ -10,19 +10,7 @@ React, Chart.js, Edamam API, axios.
 ## Notable:
 Make sure to quantify any ingredient search query when using the ingredient analyzer.
 
-## [Live Demo](https://tuterolive.herokuapp.com/)
-
-
-
-
-
-
-
-
-
-
-
-
+## [Live Demo](https://foodle-recipes.netlify.app/)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
