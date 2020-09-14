@@ -28,7 +28,7 @@ const AnalysisContextProvider = (props) => {
     }
 
     const fetchData = searchQ => {
-            axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${searchQ}`).then(resp => {
+            axios.get(`https://cors-anywhere.herokuapp.com/https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${searchQ}`).then(resp => {
                 dispatch({
                     type: "SET_ANALYSIS",
                     analysis: resp.data
