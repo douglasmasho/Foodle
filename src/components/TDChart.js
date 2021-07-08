@@ -7,7 +7,7 @@ const TDChart = () => {
     window.scrollTo(0,document.body.scrollHeight);
     console.log(analysis);
     useEffect(()=>{
-        if(Object.entries(analysis.totalDaily).length !== 0){
+        if(analysis.hasOwnProperty("totalDaily")){
             let myChart = document.querySelector(".myChart").getContext("2d");
             //array with the object that contain the labels and quantities
             const analysisArr =  Object.values(analysis.totalDaily)
@@ -67,8 +67,8 @@ const TDChart = () => {
         }
 
     })
-    
-    if(Object.entries(analysis.totalDaily).length !== 0){
+
+    if(analysis.hasOwnProperty("totalDaily")){
         return ( 
             <div className="u-margin-bottom">
                 <canvas className="myChart"></canvas>

@@ -20,6 +20,7 @@ const AnalysisContextProvider = (props) => {
     const APP_KEY = process.env.REACT_APP_ANALYZE_KEY;
 
 
+
     const initFetch = string =>{
         //url encode the string from the user
         const arr = string.split(" ");
@@ -28,7 +29,7 @@ const AnalysisContextProvider = (props) => {
     }
 
     const fetchData = searchQ => {
-            axios.get(`https://cors-anywhere.herokuapp.com/https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${searchQ}`).then(resp => {
+            axios.get(`https://api.edamam.com/api/nutrition-data?app_id=${APP_ID}&app_key=${APP_KEY}&ingr=${searchQ}`).then(resp => {
                 dispatch({
                     type: "SET_ANALYSIS",
                     analysis: resp.data
