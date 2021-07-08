@@ -22,7 +22,7 @@ const RecipeWall = () => {
 
                         <p className="u-margin-top u-margin-left">{recipe.recipe.label}</p>
                             <div className="recipe-card__bottomdiv center-hrz--col u-margin-top">
-                                <a href={recipe.recipe.url} className="recipe-card__button" target="_blank">See full recipe</a>
+                                <a href={recipe.recipe.url} className="recipe-card__button" target="_blank" rel="noopener noreferrer">See full recipe</a>
                                 <Link to={`/recipe/${index}`} className="recipe-card__button">See nutritional details</Link>
                             </div>
                         </div> 
