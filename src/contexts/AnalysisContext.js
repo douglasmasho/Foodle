@@ -16,9 +16,10 @@ const AnalysisContextProvider = (props) => {
     }
     const [analysis, dispatch] = useReducer(analysisReducer, analysisObj);
     //we can access environmental variables using process.env 
-    const APP_ID = process.env.REACT_APP_ANALYZE_ID;
-    const APP_KEY = process.env.REACT_APP_ANALYZE_KEY;
-
+    // const APP_ID = process.env.REACT_APP_ANALYZE_ID;
+    // const APP_KEY = process.env.REACT_APP_ANALYZE_KEY;
+    const APP_ID = "80bd6370";
+    const APP_KEY = "4082c853c9ea46dfaff0cb083f5b0d8b";
 
 
     const initFetch = string =>{
