@@ -3,6 +3,8 @@ import { RecipeContext } from '../contexts/RecipeContext';
 require("dotenv").config();
 
 
+
+
 const SearchBar = () => {
     //we can access environmental variables using process.env 
     const APP_ID = process.env.REACT_APP_SEARCH_ID;
