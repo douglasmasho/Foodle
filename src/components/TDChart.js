@@ -17,7 +17,6 @@ const TDChart = () => {
             analysisArr.forEach((obj)=>{
                 nurtientLabelArr.push(obj.label);
                 quantityArr.push(parseFloat(obj.quantity.toFixed(2)));
-                console.log(quantityArr)
             });
     
             

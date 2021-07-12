@@ -90,7 +90,7 @@ const NutriInfo = (props) => {
                                             <td className="ingredient" onClick={analyzeIngredient}>
                                                 <p className="ingredient__text">{ingredient.text}</p><span className="ingredient__analyze"> Analyze ingredient</span>
                                             </td>
-                                            <td>{ingredient.weight}g</td>      
+                                            <td>{ingredient.weight.toFixed(1)}g</td>      
                                         </tr>
                                     ))}
                                 </tbody>
@@ -112,7 +112,7 @@ const NutriInfo = (props) => {
                                         nutrientArr.map((nutrient, index)=>(
                                             <tr key={index}>
                                                 <td>{nutrient.label}</td>
-                                                <td>{nutrient.quantity}%</td>
+                                                <td>{nutrient.quantity.toFixed(1)}%</td>
                                             </tr>
                                         ))
                                     }
@@ -136,7 +136,7 @@ const NutriInfo = (props) => {
                                         nutrientArrTot.map((nutrient, index)=>(
                                             <tr key={index}>
                                                 <td>{nutrient.label}</td>
-                                                <td>{nutrient.quantity}{nutrient.unit}</td>
+                                                <td>{nutrient.quantity.toFixed(2)}{nutrient.unit}</td>
                                             </tr>
                                         ))
                                     }
