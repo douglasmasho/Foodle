@@ -1,6 +1,9 @@
 # Foodle
 ![Banner](./foodle.png)
 
+## [Live Demo](https://foodle-recipes.netlify.app/)
+
+
 ## Description
 Foodle is a recipe searching app that generates recipes, ingredients and nutritional information for any recipe search query. This app includes an ingredient analyzer that shows nutritional composition of any ingredient in the form of a bar graph.
 
@@ -9,9 +12,6 @@ React, Chart.js, Edamam API, axios.
 
 ## Notable:
 Make sure to quantify any ingredient search query when using the ingredient analyzer.
-
-## [Live Demo](https://foodle-recipes.netlify.app/)
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
